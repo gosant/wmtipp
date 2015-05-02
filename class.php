@@ -1,19 +1,37 @@
 <?php
 
 class spiel {
-    public $team1;
-    public $team2;
-    public $toreteam1;
-    public $toreteam2;
-
+    public $heim;
+    public $gast;
+    public $torheim;
+    public $torgast;
+    
+    public function setHeim($team) {
+        $this->heim = $team;
+    }
+    
+    public function setGast($team) {
+        $this->gast = $team;
+    }
+    
+    
     public function tor ($team) {
-        if ($team == $team1) {
-            $toreteam1++;
+        echo 'Tor!!';         
+        if ($team == $this->heim) {
+            $this->torheim++;
         }
         else {
-            $toreteam2++;
+            $this->torgast++;
         }
-
+    }
+    
+    
+    public function ergebnis () {
+        return $this->heim." ".$this->torheim." : ".$this->torgast." ".$this->gast;     
+    }    
+    
+    public function eintragen () {
+        
     }
 }
 
